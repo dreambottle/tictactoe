@@ -1,16 +1,19 @@
 package tictactoe.game.board;
 
-import java.util.Collection;
+import tictactoe.game.Position;
 
 public interface Board {
 
-    int getSize();
+    int getHSize();
+
+    int getVSize();
 
     boolean hasWinningCombination();
 
-    int[] getAllPositions();
+    int[] getAllMarks();
 
 //    Collection<Integer> getPlayerPositionIndices(int playerId);
 
+    boolean putMark(int playerId, Position position);
 
 }
