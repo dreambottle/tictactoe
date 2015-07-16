@@ -8,12 +8,8 @@ public class HumanPlayer implements Player {
     private final Scanner scanner;
     private final String name;
     private final Board board;
-    private int maxX;
-    private int maxY;
 
-    public HumanPlayer(String name, Scanner scanner, int maxX, int maxY, Board board) {
-        this.maxX = maxX;
-        this.maxY = maxY;
+    public HumanPlayer(String name, Scanner scanner, Board board) {
         this.scanner = scanner;
         this.name = name;
         this.board = board;
@@ -30,8 +26,8 @@ public class HumanPlayer implements Player {
                 x = scanner.nextInt() - 1;
                 y = scanner.nextInt() - 1;
 
-                if (x < 0 || x >= maxX || y < 0 || y >= maxY) {
-                    System.out.println("Out of range. Range: 1 - " + maxX);
+                if (x < 0 || x >= board.getXSize() || y < 0 || y >= board.getYSize()) {
+                    System.out.println("Out of range. Range: [1 - " + board.getXSize() + "] [1 - " + board.getYSize() + "]");
                     continue;
                 }
                 if (board.getPlayerAt(x, y) != -1) {

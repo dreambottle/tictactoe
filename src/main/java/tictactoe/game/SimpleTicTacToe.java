@@ -10,7 +10,6 @@ public class SimpleTicTacToe {
 
 
     private final Scanner scanner;
-    //    private int[][] board;
     private Board board;
     private int currentPlayerId = 1;
     private boolean quit = false;
@@ -19,17 +18,8 @@ public class SimpleTicTacToe {
     public SimpleTicTacToe() {
         scanner = new Scanner(System.in);
         board = new Board();
-//        clearBoard();
         start();
     }
-
-//    private void clearBoard() {
-//        board = new int[][]{
-//                {-1, -1, -1},
-//                {-1, -1, -1},
-//                {-1, -1, -1}
-//        };
-//    }
 
     private void start() {
         System.out.println("Game started");
@@ -82,7 +72,7 @@ public class SimpleTicTacToe {
         while (true) {
             int choice = scanner.nextInt();
             if (choice == 1) {
-                return new HumanPlayer("Player" + id, scanner, 3, 3, board);
+                return new HumanPlayer("Player" + id, scanner, board);
             }
             if (choice == 2) {
                 return new RandomMoveAI(board);

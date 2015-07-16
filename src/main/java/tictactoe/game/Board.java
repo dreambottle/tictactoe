@@ -77,6 +77,14 @@ public class Board {
         return positions;
     }
 
+    public int getXSize() {
+        return 3;
+    }
+
+    public int getYSize() {
+        return 3;
+    }
+
     private void clear() {
         board = new int[][]{
                 {-1, -1, -1},
