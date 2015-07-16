@@ -6,10 +6,12 @@ import java.util.Random;
 
 public class RandomMoveAI implements Player {
 
+    private final int id;
     private final Board board;
     private final Random random;
 
-    public RandomMoveAI(Board board) {
+    public RandomMoveAI(int id, Board board) {
+        this.id = id;
         this.board = board;
         random = new Random();
     }
@@ -26,6 +28,6 @@ public class RandomMoveAI implements Player {
 
     @Override
     public String getName() {
-        return "Dumb CPU";
+        return "Dumb CPU" + id;
     }
 }

@@ -75,7 +75,7 @@ public class SimpleTicTacToe {
                 return new HumanPlayer("Player" + id, scanner, board);
             }
             if (choice == 2) {
-                return new RandomMoveAI(board);
+                return new RandomMoveAI(id, board);
             }
             if (choice == 3) {
                 return new SmartassAI(id, board);

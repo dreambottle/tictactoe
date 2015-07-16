@@ -7,9 +7,9 @@ import java.util.List;
  */
 public class SmartassAI implements Player {
 
-    int id;
-    Board board;
-    RandomMoveAI randomMoveAI;
+    private final int id;
+    private final Board board;
+    private final RandomMoveAI randomMoveAI;
 
     Position[] lookup = {
             new Position(1, 1),
@@ -24,7 +24,7 @@ public class SmartassAI implements Player {
         this.board = board;
 
         // fallback
-        randomMoveAI = new RandomMoveAI(board);
+        randomMoveAI = new RandomMoveAI(id, board);
     }
 
     @Override
